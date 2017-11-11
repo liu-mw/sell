@@ -1,0 +1,15 @@
+2017-11-11 10:11:18.607  INFO 16000 --- [main] com.imooc.sell.LoggerTest                : Starting LoggerTest on DESKTOP-VB0CUO6 with PID 16000 (started by ASUS in C:\Users\ASUS\Desktop\sell)
+2017-11-11 10:11:18.609  INFO 16000 --- [main] com.imooc.sell.LoggerTest                : No active profile set, falling back to default profiles: default
+2017-11-11 10:11:18.662  INFO 16000 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2c38f8: startup date [Sat Nov 11 10:11:18 CST 2017]; root of context hierarchy
+2017-11-11 10:11:20.377  INFO 16000 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@2c38f8: startup date [Sat Nov 11 10:11:18 CST 2017]; root of context hierarchy
+2017-11-11 10:11:20.496  INFO 16000 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-11 10:11:20.497  INFO 16000 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-11 10:11:20.528  INFO 16000 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-11 10:11:20.529  INFO 16000 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-11 10:11:20.566  INFO 16000 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-11 10:11:20.756  INFO 16000 --- [main] com.imooc.sell.LoggerTest                : Started LoggerTest in 2.662 seconds (JVM running for 3.595)
+2017-11-11 10:11:20.801  INFO 16000 --- [main] com.imooc.sell.LoggerTest                : name: imooc ,password: 123456
+2017-11-11 10:11:20.801  INFO 16000 --- [main] com.imooc.sell.LoggerTest                : name: imooc, password: 123456
+2017-11-11 10:11:20.803  INFO 16000 --- [main] com.imooc.sell.LoggerTest                : info....
+2017-11-11 10:11:20.803 ERROR 16000 --- [main] com.imooc.sell.LoggerTest                : error....
+2017-11-11 10:11:20.807  INFO 16000 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@2c38f8: startup date [Sat Nov 11 10:11:18 CST 2017]; root of context hierarchy

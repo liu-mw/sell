@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+    <!--用于输出日志的格式-->
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %d - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+    <!--定义输出级别，只输入info级别，需要定义过滤
+    public enum Level {
+    ERROR(40, "ERROR"),
+    WARN(30, "WARN"),
+    INFO(20, "INFO"),
+    DEBUG(10, "DEBUG"),
+    TRACE(0, "TRACE");-->
+    <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>
+                %msg%n
+            </pattern>
+        </encoder>
+        <!--滚动策略，一天生产一个文件-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--路径-->
+            <fileNamePattern>C:/Users/ASUS/Desktop/sell/info.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+
+    <appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <pattern>
+                %msg%n
+            </pattern>
+        </encoder>
+        <!--滚动策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--路径-->
+            <fileNamePattern>C:/Users/ASUS/Desktop/sell/error.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <root level="info">
+        <!--配置控制台的输出-->
+        <appender-ref ref="consoleLog" />
+
+        <appender-ref ref="fileInfoLog" />
+        <appender-ref ref="fileErrorLog" />
+    </root>
+
+</configuration>
