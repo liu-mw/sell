@@ -42,7 +42,7 @@ public class ProductServiceImpl implements ProductService {
         return repository.save(productInfo);
     }
 
-    /*@Override
+    /*@Override第二部分
     @Transactional
     public void increaseStock(List<CartDTO> cartDTOList) {
         for (CartDTO cartDTO: cartDTOList) {
