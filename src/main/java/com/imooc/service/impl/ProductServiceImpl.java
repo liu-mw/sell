@@ -1,7 +1,10 @@
 package com.imooc.service.impl;
 
 import com.imooc.dataobject.ProductInfo;
+import com.imooc.dto.CartDTO;
 import com.imooc.enums.ProductStatusEnum;
+import com.imooc.enums.ResultEnum;
+import com.imooc.exception.SellException;
 import com.imooc.repository.ProductInfoRepository;
 import com.imooc.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +45,7 @@ public class ProductServiceImpl implements ProductService {
         return repository.save(productInfo);
     }
 
-    /*@Override第二部分
+    @Override//第二部分
     @Transactional
     public void increaseStock(List<CartDTO> cartDTOList) {
         for (CartDTO cartDTO: cartDTOList) {
@@ -56,9 +59,9 @@ public class ProductServiceImpl implements ProductService {
             repository.save(productInfo);
         }
 
-    }*/
+    }
 
-   /* @Override
+    @Override
     @Transactional
     public void decreaseStock(List<CartDTO> cartDTOList) {
         for (CartDTO cartDTO: cartDTOList) {
@@ -76,7 +79,7 @@ public class ProductServiceImpl implements ProductService {
 
             repository.save(productInfo);
         }
-    }*/
+    }
 
     /*@Override
     public ProductInfo onSale(String productId) {
