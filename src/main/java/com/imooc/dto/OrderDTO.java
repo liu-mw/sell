@@ -1,10 +1,12 @@
 package com.imooc.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.imooc.dataobject.OrderDetail;
 import com.imooc.enums.OrderStatusEnum;
 import com.imooc.enums.PayStatusEnum;
+import com.imooc.utils.serializer.Date2LongSerializer;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -16,6 +18,8 @@ import java.util.List;
  * @date 2017/11/12 19:40
  */
 @Data//数据传输对象
+//@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)该方法已废弃
+//@JsonInclude(JsonInclude.Include.NON_NULL)//如果该对象中有null的字段则不返回该字段相当于少了对应的null字段
 public class OrderDTO {
 
     /** 订单id. */
@@ -43,11 +47,11 @@ public class OrderDTO {
     private Integer payStatus;
 
     /** 创建时间. */
-    //@JsonSerialize(using = Date2LongSerializer.class)
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date createTime;
 
     /** 更新时间. */
-    //@JsonSerialize(using = Date2LongSerializer.class)
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
 
     List<OrderDetail> orderDetailList;

@@ -141,7 +141,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     @Transactional
     public OrderDTO cancel(OrderDTO orderDTO) {
-        /*OrderMaster orderMaster = new OrderMaster();
+        OrderMaster orderMaster = new OrderMaster();
 
         //判断订单状态
         if (!orderDTO.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
@@ -170,17 +170,16 @@ public class OrderServiceImpl implements OrderService {
 
         //如果已支付, 需要退款
         if (orderDTO.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
-            payService.refund(orderDTO);
+//            payService.refund(orderDTO);
         }
 
-        return orderDTO;*/
-        return null;
+        return orderDTO;
     }
 
     @Override
     @Transactional
     public OrderDTO finish(OrderDTO orderDTO) {
-        /*//判断订单状态
+        //判断订单状态
         if (!orderDTO.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
             log.error("【完结订单】订单状态不正确, orderId={}, orderStatus={}", orderDTO.getOrderId(), orderDTO.getOrderStatus());
             throw new SellException(ResultEnum.ORDER_STATUS_ERROR);
@@ -197,16 +196,15 @@ public class OrderServiceImpl implements OrderService {
         }
 
         //推送微信模版消息
-        pushMessageService.orderStatus(orderDTO);
+//        pushMessageService.orderStatus(orderDTO);
 
-        return orderDTO;*/
-        return null;
+        return orderDTO;
     }
 
     @Override
     @Transactional
     public OrderDTO paid(OrderDTO orderDTO) {
-        /*//判断订单状态
+        //判断订单状态
         if (!orderDTO.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
             log.error("【订单支付完成】订单状态不正确, orderId={}, orderStatus={}", orderDTO.getOrderId(), orderDTO.getOrderStatus());
             throw new SellException(ResultEnum.ORDER_STATUS_ERROR);
@@ -228,8 +226,7 @@ public class OrderServiceImpl implements OrderService {
             throw new SellException(ResultEnum.ORDER_UPDATE_FAIL);
         }
 
-        return orderDTO;*/
-        return null;
+        return orderDTO;
     }
 
     @Override
